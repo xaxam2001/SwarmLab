@@ -4,14 +4,16 @@
   "displayName": "SwarmLab",
   "description": "Package to simplify the creation of rule-based particle systems within the runtime environment.",
   "unity": "6.2",
+  "samples": [
+    {
+      "displayName": "Demo Scene",
+      "description": "Demo Scene",
+      "path": "Samples/"
+    }
+  ]
   "author": {
     "name": "CHALUMEAU Maxime & DOURNAUX Nathan",
     "email": "",
     "url": ""
   },
-  "repository": {
-    "type": "git",
-    "url": "",
-    "revision": ""
-  }
 }
