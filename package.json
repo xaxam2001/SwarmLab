@@ -4,12 +4,6 @@
   "displayName": "SwarmLab",
   "description": "Package to simplify the creation of rule-based particle systems within the runtime environment.",
   "unity": "6.2",
-  "unityRelease": "6000.2.10f",
-  "keywords": [
-    "UDP",
-    "communication",
-    "mlnlab"
-  ],
   "author": {
     "name": "CHALUMEAU Maxime & DOURNAUX Nathan",
     "email": "",
