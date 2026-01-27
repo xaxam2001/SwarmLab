@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0237a3e60404d14897d42c176399b3b, type: 3}
-  m_Name: NewSwarmConfig
+  m_Name: PreyPredator2S Config
   m_EditorClassIdentifier: Assembly-CSharp::SwarmLab.SwarmConfig
   speciesConfigs:
   - speciesDefinition: {fileID: 11400000, guid: fdcb502a37dd94940ad5e6680c6d76a7, type: 2}
