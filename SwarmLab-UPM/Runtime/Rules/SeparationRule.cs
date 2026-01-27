@@ -5,37 +5,35 @@ using UnityEngine;
 namespace Runtime.Rules
 {
     [System.Serializable]
-    public class CohesionRule : SteeringRule
+    public class SeparationRule : SteeringRule
     {
         public override Vector3 CalculateForce(Entity entity, List<Entity> neighbors)
         {
             if (neighbors == null || neighbors.Count == 0)
                 return Vector3.zero;
 
-            Vector3 centerOfMass = Vector3.zero;
-            float totalWeight = 0f;
-            int count = 0;
-            
-            
+            Vector3 separationForce = Vector3.zero;
+
             foreach (var neighbor in neighbors)
             {
-                // Skip self if included
                 if (neighbor == entity) continue;
 
                 float weight = GetWeightFor(neighbor.Species);
-                if (weight > 0f)
+                // If weight is 0 or negative, we assume no repulsion (or attraction handled elsewhere)
+                if (weight <= 0f) continue;
+
+                Vector3 toEntity = entity.Position - neighbor.Position;
+                float sqrDist = toEntity.sqrMagnitude;
+
+                if (sqrDist > 0.00001f)
                 {
-                    centerOfMass += neighbor.Position * weight;
-                    totalWeight += weight;
-                    count++;
+                    separationForce += toEntity * (weight / sqrDist);
                 }
             }
 
-            if (count > 0 && totalWeight > 0f)
+            if (separationForce.sqrMagnitude > 0.00001f)
             {
-                centerOfMass /= totalWeight;
-                Vector3 direction = centerOfMass - entity.Position;
-                return direction.normalized;
+                return separationForce.normalized;
             }
 
             return Vector3.zero;
