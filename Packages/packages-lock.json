@@ -205,7 +205,7 @@
       "url": "https://packages.unity.com"
     },
     "com.xaxam.swarmlab": {
-      "version": "file:C:\\Users\\maxim\\Documents\\Classes\\Hackaton Unity\\SwarmLab\\SwarmLab-UPM",
+      "version": "file:../SwarmLab-UPM",
       "depth": 0,
       "source": "local",
       "dependencies": {}
