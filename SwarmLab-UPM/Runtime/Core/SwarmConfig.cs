@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace SwarmLab
@@ -14,6 +13,7 @@ namespace SwarmLab
         [Header("Spawn Settings")]
         public int count;
         public float spawnRadius;
+        public Vector3 spawnOffset;
 
         [Header("Behavior rules")]
         [Tooltip("List of behavior rules this species follows in this simulation")]

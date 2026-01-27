@@ -3,10 +3,10 @@ using UnityEngine;
 namespace SwarmLab
 {
 
-    [CreateAssetMenu(fileName = "SpecieDefinition", menuName = "SwarmLab/SpecieDefinition")]
+    [CreateAssetMenu(fileName = "Species Definition", menuName = "SwarmLab/Species Definition")]
     public class SpeciesDefinition : ScriptableObject
     {
-        [SerializeField] private GameObject prefab;
-        [SerializeField] private string speciesName;
+        public GameObject prefab;
+        public string speciesName;
     }
 }
