@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: SwarmLab.Runtime::SwarmLab.SpeciesDefinition
   prefab: {fileID: 8990343237781238139, guid: cc531a45927ac9342909356363356907, type: 3}
   speciesName: Default
+  maxSpeed: 5
