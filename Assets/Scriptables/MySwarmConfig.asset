@@ -14,23 +14,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: SwarmLab.Runtime::SwarmLab.SwarmConfig
   speciesConfigs:
   - speciesDefinition: {fileID: 11400000, guid: ebc16f5589b4d5f478a120964b807c98, type: 2}
-    count: 350
-    spawnRadius: 10.979256
-    spawnOffset: {x: 0, y: 0, z: 0}
+    count: 599
+    spawnRadius: 4.4
+    spawnOffset: {x: 5.940841, y: -3.236314, z: -4.2966065}
     steeringRules:
     - rid: 5385356918512943318
     - rid: 5385356918512943314
     - rid: 5385356918512943315
     - rid: 5385356918512943316
     - rid: 5385356918512943317
+  - speciesDefinition: {fileID: 11400000, guid: 13068c89c2fa0fc42877eddcb5fd479f, type: 2}
+    count: 69
+    spawnRadius: 3.0087726
+    spawnOffset: {x: -4.144045, y: 4.851364, z: -6.395386}
+    steeringRules: []
   references:
     version: 2
     RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
     - rid: 5385356918512943314
       type: {class: MyCustomRule, ns: , asm: Assembly-CSharp}
       data:
         speciesParams:
-        - species: {fileID: 11400000, guid: ebc16f5589b4d5f478a120964b807c98, type: 2}
+        - species: {instanceID: -33048}
+          weight: 1
+          customRadius: 10
+        - species: {instanceID: 104358}
           weight: 1
           customRadius: 10
     - rid: 5385356918512943315
@@ -41,12 +51,18 @@ MonoBehaviour:
         - species: {fileID: 11400000, guid: ebc16f5589b4d5f478a120964b807c98, type: 2}
           weight: 1
           visionRadius: 10
+        - species: {fileID: 11400000, guid: 13068c89c2fa0fc42877eddcb5fd479f, type: 2}
+          weight: 1
+          visionRadius: 10
     - rid: 5385356918512943316
       type: {class: CohesionRule, ns: , asm: Assembly-CSharp}
       data:
         maxForce: 2
         speciesParams:
         - species: {fileID: 11400000, guid: ebc16f5589b4d5f478a120964b807c98, type: 2}
+          weight: 1
+          visionRadius: 10
+        - species: {fileID: 11400000, guid: 13068c89c2fa0fc42877eddcb5fd479f, type: 2}
           weight: 1
           visionRadius: 10
     - rid: 5385356918512943317
@@ -56,11 +72,14 @@ MonoBehaviour:
         - species: {fileID: 11400000, guid: ebc16f5589b4d5f478a120964b807c98, type: 2}
           weight: 1
           minDistance: 10
+        - species: {fileID: 11400000, guid: 13068c89c2fa0fc42877eddcb5fd479f, type: 2}
+          weight: 1
+          minDistance: 10
         maxForce: 2
     - rid: 5385356918512943318
       type: {class: BoundingBoxRule, ns: , asm: Assembly-CSharp}
       data:
         center: {x: 0, y: 0, z: 0}
-        size: {x: 20, y: 20, z: 20}
+        size: {x: 30, y: 30, z: 30}
         edgeThreshold: 5
         maxForce: 10

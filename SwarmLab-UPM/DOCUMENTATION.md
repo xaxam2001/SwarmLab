@@ -62,14 +62,20 @@ The `SwarmConfig` asset defines *who* is in the swarm.
    <p align="center">
   <img src="Documentation~/create-species-so.gif" width="1396" alt="Create Species Definition" />
 </p>
-
-   - **Prefab**: Assign the GameObject to spawn.
-   - **Species Name**: The unique identifier for this species (used in rules).
-   - **Max Speed**: The absolute speed limit for entities of this species.
-
-<p align="center">
-  <img src="Documentation~/config-specie-in-inspector.png" width="467" alt="Species Definition Inspector" />
-</p>
+   <table width="100%">
+   <tr>
+   <td width="50%" valign="top">
+   <img src="Documentation~/config-specie-in-inspector.png" width="100%" alt="Species Definition Inspector" />
+   </td>
+   <td width="50%" valign="top">
+   <ul>
+   <li><b>Prefab</b>: Assign the GameObject to spawn.</li>
+   <li><b>Species Name</b>: The unique identifier for this species (used in rules).</li>
+   <li><b>Max Speed</b>: The absolute speed limit for entities of this species.</li>
+   </ul>
+   </td>
+   </tr>
+   </table>
 
 ### 2. Setting up the Swarm Manager
 The `SwarmManager` is the brain of the simulation.
@@ -78,10 +84,15 @@ The `SwarmManager` is the brain of the simulation.
 3. Assign your **Swarm Config** asset to the `Swarm Config` field.
 4. **Volumetric vs Planar**: 
    - By default, the simulation is **Volumetric** (3D sphere).
+     - In this mode, you can move the spawn zones and adjust the entity count.
+     - **Note**: You must click **Generate Swarm** again after moving spawn zones to apply changes.
+     <p align="center">
+       <img src="Documentation~/create-volumetric-simulation-and-update-spawn-settings.gif" width="50%" alt="Volumetric Simulation Settings" />
+     </p>
    - To switch to **Planar** (2D), assign a Transform to the `Planar Boundary` field.
    - Shortcut: Right-click the `SwarmManager` component header and select **Create Simulation Plane**. This will automatically generate a boundary plane and switch the mode to Planar.
    <p align="center">
-  <img src="Documentation~/create-simulation-planar-and-change-planar-settings.gif" width="1920" alt="Create Planar Simulation" />
+  <img src="Documentation~/create-simulation-planar-and-change-planar-settings.gif" width="50%" alt="Create Planar Simulation" />
 </p>
 
 ### 3. Running the Simulation
