@@ -38,4 +38,4 @@ If you want to modify the package source code:
 
 Documentation
 ---
-See [Documentation](Documentation.md) for full details on workflows, configuration.
+See [Documentation](Documentation~/DOCUMENTATION.md) for full details on workflows, configuration.

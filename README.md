@@ -38,4 +38,4 @@ If you want to modify the package source code:
 
 Documentation
 ---
-See [Documentation](SwarmLab-UPM/DOCUMENTATION.md) for full details on workflows, configuration.
+See [Documentation](SwarmLab-UPM/Documentation~/DOCUMENTATION.md) for full details on workflows, configuration.
