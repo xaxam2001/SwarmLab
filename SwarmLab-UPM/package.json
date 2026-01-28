@@ -6,14 +6,14 @@
   "unity": "6000.2",
   "samples": [
     {
-      "displayName": "Demo Scene",
-      "description": "Demo Scene",
-      "path": "Samples/"
+      "displayName": "Boids Demo",
+      "description": "Contains two simple scene demonstrating a 2D and 3D simple boids implementation.",
+      "path": "Samples~/Boids Demo"
     }
   ],
   "author": {
-    "name": "Xaxam",
-    "email": "",
+    "name": "Xaxam&Kodatsu",
+    "email": "maximecha14@gmail.com",
     "url": ""
   }
 }
