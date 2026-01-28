@@ -39,19 +39,23 @@ The `SwarmConfig` asset defines *who* is in the swarm.
 1. Right-click in the Project window.
 2. Navigate to **Create > SwarmLab > Swarm Config**.
 <p align="center">
-  <img src="Documentation~/create-swarmConfig-so.gif" width="1396" alt="Create Swarm Config" />
+  <img src="Documentation~/create-swarmConfig-so.gif" width="960" alt="Create Swarm Config" />
 </p>
-3. In the Inspector, you can add "Species Configs".
-
-<p align="center">
-  <img src="Documentation~/config-swarmConfig-so.gif" width="482" alt="Configure Swarm Config" />
-</p>
-4. For each species, assign a **Species Definition**.
-   - You can add **Steering Rules** to each species configuration to define their behavior.
-
-   <p align="center">
-  <img src="Documentation~/add-rule-foreach-species.gif" width="448" alt="Add Rules" />
-</p>
+<table width="100%">
+<tr>
+<td width="50%" valign="top">
+3. In the Inspector, you can add "Species Configs".<br><br>
+<img src="Documentation~/config-swarmConfig-so.gif" width="482" alt="Configure Swarm Config" />
+</td>
+<td width="50%" valign="top">
+4. For each species, assign a <b>Species Definition</b>.
+<br>
+- You can add <b>Steering Rules</b> to each species to define behavior.
+<br><br>
+<img src="Documentation~/add-rule-foreach-species.gif" width="448" alt="Add Rules" />
+</td>
+</tr>
+</table>
 
 5. To create a Species Definition:
    - Right-click > **Create > SwarmLab > Species Definition**.
