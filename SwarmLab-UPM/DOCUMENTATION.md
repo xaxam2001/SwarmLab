@@ -43,7 +43,8 @@ The `SwarmConfig` asset defines *who* is in the swarm.
 
 ![Configure Swarm Config](Documentation~/config-swarmConfig-so.gif)
 4. For each species, assign a **Species Definition**.
-   - You can add **Steering Rules** to each species configuration to define their behavior (e.g., Alignment, Cohesion).
+   - You can add **Steering Rules** to each species configuration to define their behavior.
+
    ![Add Rules](Documentation~/add-rule-foreach-species.gif)
 
 5. To create a Species Definition:
@@ -75,7 +76,7 @@ The `SwarmManager` is the brain of the simulation.
 
 ### Custom Steering Rules
 You can create your own behaviors by inheriting from `SteeringRule`.
-The new architecture allows you to define custom parameters *per species*.
+The architecture allows you to define custom parameters *per species*.
 
 1. Create a new C# script.
 2. Inherit from `SwarmLab.SteeringRule`.
