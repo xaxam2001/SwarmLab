@@ -27,7 +27,6 @@ If you want to modify the package source code:
 
 ## Requirements
 - **Unity Version**: 6000.2 or higher.
-- **Hardware**: Standard desktop runtime requirements.
 
 ## Limitations
 - **Performance**: The current interaction algorithm is **O(N²)**. Optimizations (such as spatial partitioning) are not yet implemented in this version, which explains the limitation on the number of entities. It is recommended to keep the entity count below 300-500 for stable frame rates on average hardware.
