@@ -75,11 +75,13 @@ The `SwarmManager` is the brain of the simulation.
 
 ### Custom Steering Rules
 You can create your own behaviors by inheriting from `SteeringRule`.
+The new architecture allows you to define custom parameters *per species*.
+
 1. Create a new C# script.
 2. Inherit from `SwarmLab.SteeringRule`.
-3. Implement the `CalculateForce(Entity entity, List<Entity> neighbors)` method.
-4. The method must return a `Vector3` representing the desired acceleration force.
-5. You can now add this new rule to any `SpeciesConfig` in your scriptable objects.
+3. Define a nested class that inherits from `SpeciesParams` to hold your per-species data.
+4. Implement `SyncSpeciesList` to ensure your data stays in sync with the config.
+5. Implement `CalculateForce`.
 
 ```csharp
 using SwarmLab;
@@ -89,28 +91,60 @@ using System.Collections.Generic;
 [System.Serializable]
 public class MyCustomRule : SteeringRule
 {
+    // 1. Define custom parameters per species
+    [System.Serializable]
+    public class MyParams : SpeciesParams
+    {
+        public float weight = 1f;
+        public float customRadius = 10f;
+    }
+
+    // 2. The list that will be serialized
+    public List<MyParams> speciesParams = new List<MyParams>();
+
+    // 3. Implement Sync logic (Boilerplate)
+    public override void SyncSpeciesList(List<SpeciesDefinition> allSpecies)
+    {
+        // Add new species
+        foreach (var def in allSpecies)
+        {
+            if (!speciesParams.Exists(p => p.species == def))
+            {
+                speciesParams.Add(new MyParams { species = def });
+            }
+        }
+        // Remove deleted species
+        speciesParams.RemoveAll(p => p.species == null || !allSpecies.Contains(p.species));
+    }
+
+    // 4. Calculate Force
     public override Vector3 CalculateForce(Entity entity, List<Entity> neighbors)
     {
-        // Your logic here
-        return Vector3.zero;
+        Vector3 force = Vector3.zero;
+        
+        // Find params for this entity (or caching them) is recommended
+        // Logic here...
+        
+        return force;
     }
 }
 ```
 
 ### SteeringRule Architecture
-The `SteeringRule` is the abstract base class for all behaviors. If you are extending the system, it is important to understand its members:
+The `SteeringRule` includes a robust system to handle species-specific settings.
 
 | Member | Type | Description |
 | :--- | :--- | :--- |
 | `CalculateForce` | `abstract Vector3` | **Required**. The core logic method. Receives the `Entity` (self) and a list of `neighbors` (all entities). Must return an acceleration `Vector3`. |
-| `OnValidate` | `virtual void` | Use this to perform editor-time validation (e.g. clamping values). Always call `base.OnValidate()` if you override it. |
-| `GetWeightFor` | `float` | **Helper**. Returns the specific weight for a given `SpeciesDefinition` based on the configuration in the inspector. Use this to implement species-specific logic. |
-| `speciesWeights` | `List<SpeciesWeight>` | The raw list of species-weight pairs. Generally you should use `GetWeightFor` instead of accessing this directly. |
+| `SyncSpeciesList` | `abstract void` | **Required**. Called by the Editor to ensure your internal list of parameters matches the Swarm Config's species list. |
+| `SpeciesParams` | `class` | **Base Class**. Inherit from this to create your own per-species settings container. |
+| `OnValidate` | `virtual void` | Use this to perform editor-time validation (e.g. clamping values). |
 
 ### Multi-Species Interactions
-The system supports multiple species interacting. Each `SteeringRule` has a `SpeciesWeights` list.
-- You can define that "Species A" ignores "Species B" but is strongly attracted to "Species C".
-- Use the **Species Weights** list in the rule inspector to fine-tune these interactions per species.
+The system supports multiple species interacting.
+Standard rules (like **Alignment**, **Cohesion**, **Separation**) utilize the `SpeciesParams` pattern to define a **weight** and/or **radius** per species.
+- This allows you to define that "Species A" ignores "Species B" but is strongly attracted to "Species C".
+- Use the list in the rule inspector to fine-tune these interactions per species.
 
 ## Reference
 
@@ -127,7 +161,7 @@ The system supports multiple species interacting. Each `SteeringRule` has a `Spe
 Most rules share these settings:
 - **Neighbor Radius**: How far an entity can "see" others.
 - **Max Force**: The physical limit of how fast the entity can change direction.
-- **Species Weights**: A multiplier for how strictly this rule applies to specific neighboring species.
+- **Species Params**: List of settings (like weight/radius) for specific neighboring species.
 
 ## Samples
 The package includes a **Demo Scene** located in `Samples/Demo Scene`.
