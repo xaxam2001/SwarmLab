@@ -180,10 +180,12 @@ Standard rules (like **Alignment**, **Cohesion**, **Separation**) utilize the `S
 | **Planar Size** | The X/Z dimensions of the simulation area in Planar mode. Entities wrap around edges. |
 
 ### Common Rule Properties
-Most rules share these settings:
+Standard rules (Alignment, Cohesion, Separation) typically expose:
 - **Neighbor Radius**: How far an entity can "see" others.
 - **Max Force**: The physical limit of how fast the entity can change direction.
 - **Species Params**: List of settings (like weight/radius) for specific neighboring species.
+
+*Note: Custom rules can define entirely different parameters suited to your specific needs.*
 
 ## Samples
 The package includes a **Demo Scene** located in `Samples/Demo Scene`.
