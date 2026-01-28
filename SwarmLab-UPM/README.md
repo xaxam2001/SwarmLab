@@ -1,12 +1,16 @@
 # SwarmLab
-Swarm Flight Simulation for Runtime and Editor. 
-Modular, and reliable. 
-Offers adjustable Cohesion, Alignment, and Separation.
 
+## Overview
+**SwarmLab** is a modular and reliable Unity package designed for simulating complex swarm behaviors like flocking, schooling, and leader following. It operates effectively in **Runtime**, offering a flexible rule-based system.
 
-System Requirements
----
-Unity 6000.2 or later versions.
+### Key Features
+- **Adjustable Behaviors**: Fine-tune Cohesion, Alignment, and Separation forces.
+- **Multi-Species Support**: Create complex ecosystems where different species interacting with custom weights.
+- **Dual Simulation Modes**: seamless support for **Volumetric (3D)** and **Planar (2D)** environments.
+- **Extensible Architecture**: Easily add custom `SteeringRule` classes to define unique behaviors.
+
+## System Requirements
+- **Unity Version**: 6000.2 or later.
 
 
 ## Installation instructions
@@ -26,11 +30,6 @@ If you want to modify the package source code:
 6. Select the `package.json` file inside the `SwarmLab-UP` folder you just copied.
 
 
-## Requirements
-- **Unity Version**: 6000.2 or higher.
-
-
 Documentation
 ---
 See [Documentation](Documentation.md) for full details on workflows, configuration.
-
