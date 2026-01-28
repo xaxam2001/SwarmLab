@@ -16,4 +16,5 @@ You can install via git url by adding this entry in your manifest.json:
 
 Documentation
 ---
+See [Documentation.md](Documentation.md) for full details on workflows, configuration, and API.
 
