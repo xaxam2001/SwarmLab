@@ -252,17 +252,19 @@ namespace SwarmLab
             Matrix4x4 originalMatrix = Gizmos.matrix;
             Gizmos.matrix = transform.localToWorldMatrix;
 
-            // ONLY DRAW SPHERES IN VOLUMETRIC MODE
-            if (simulationMode == SimulationMode.Volumetric)
-            {
-                foreach (var species in swarmConfig.speciesConfigs)
-                {
-                    if (species.speciesDefinition == null) continue;
 
+            foreach (var species in swarmConfig.speciesConfigs)
+            {
+                if (species.speciesDefinition == null) continue;
+
+                // ONLY DRAW SPHERES IN VOLUMETRIC MODE
+                if (simulationMode == SimulationMode.Volumetric)
+                {
                     if (drawSpawnZones)
                     {
                         // Generate a consistent color based on the species name
-                        Color speciesColor = Color.HSVToRGB((species.speciesDefinition.name.GetHashCode() * 0.13f) % 1f,
+                        Color speciesColor = Color.HSVToRGB(
+                            (species.speciesDefinition.name.GetHashCode() * 0.13f) % 1f,
                             0.7f, 1f);
                         Gizmos.color = speciesColor;
 
@@ -272,13 +274,15 @@ namespace SwarmLab
                         Gizmos.color = new Color(speciesColor.r, speciesColor.g, speciesColor.b, 0.4f);
                         Gizmos.DrawSphere(species.spawnOffset, 0.05f);
                     }
-                    
-                    foreach (var rule in species.steeringRules)
-                    {
-                        if (rule != null) rule.DrawGizmos();
-                    }
+
+                }
+
+                foreach (var rule in species.steeringRules)
+                {
+                    if (rule != null) rule.DrawGizmos();
                 }
             }
+        
             
             Gizmos.matrix = originalMatrix;
             
