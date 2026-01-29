@@ -3,6 +3,12 @@
 ## Overview
 SwarmLab is a Unity package designed to simplify the creation and management of rule-based particle systems (swarms) within the runtime environment. It allows for the simulation of complex autonomous behaviors such as flocking, following, and avoiding, usable in both volumetric (3D) and planar (2D) modes.
 
+<p align="center">
+    <img src="on-validate-changes-at-runtime.gif" alt="Demo of the sample project" width="50%" />
+    <br>
+    <em>Demo of the sample project</em>
+</p>
+
 ## Package contents
 The package is organized as follows:
 - **Runtime**: Contains the core logic for the simulation, including `SwarmManager`, `SwarmConfig`, and the base `SteeringRule` classes.
@@ -209,7 +215,11 @@ The package includes a **Demo Scene** located in `Samples/Demo Scene`.
 - To install it, go to the Package Manager > SwarmLab > Samples and click **Import**.
 
 <p align="center">
-  <img src="Documentation~/on-validate-changes-at-runtime.gif" alt="Demo of the sample project" width="1528" />
-  <br>
-  <em>Demo of the sample project</em>
+    <img src="demo-aquarium.gif" alt="Demo of the sample project" width="50%" />
+    <br>  
+    <em>Demonstration of 3D sample - Aquarium Demo (classic boids)</em>
+    <br>
+    <img src="demo-zombies.gif" alt="Demo of the sample project" width="50%" />
+    <br>
+    <em>Demonstration of 2D sample - Zombies Demo (Prey VS Predator Boids)</em>
 </p>
