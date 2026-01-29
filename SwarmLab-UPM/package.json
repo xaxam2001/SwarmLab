@@ -1,6 +1,6 @@
 {
   "name": "com.xaxamkodatsu.swarmlab",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "displayName": "SwarmLab",
   "description": "Package to simplify the creation of rule-based particle systems within the runtime environment.",
   "unity": "6000.2",
