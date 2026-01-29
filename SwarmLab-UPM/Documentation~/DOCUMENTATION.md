@@ -210,7 +210,18 @@ Standard rules (Alignment, Cohesion, Separation) typically expose:
 *Note: Custom rules can define entirely different parameters suited to your specific needs.*
 
 ## Samples
-The package includes a **Demo Scene** located in `Samples/Demo Scene`.
+The package includes two samples.
+
+### A **Boids Rules** Sample
+
+This sample contains a simple implementation of the classic boids rules:
+- Alignment
+- Cohesion
+- Separation
+
+Plus a `BoundingBoxRule` to prevent entities from leaving the simulation area.
+
+### Two **Demo Scene** located in `Samples/Boids Demo`.
 - This scene demonstrates a multi-species setup with Alignment, Cohesion, and Separation rules.
 - To install it, go to the Package Manager > SwarmLab > Samples and click **Import**.
 
