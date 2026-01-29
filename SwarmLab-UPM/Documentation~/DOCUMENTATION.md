@@ -4,9 +4,9 @@
 SwarmLab is a Unity package designed to simplify the creation and management of rule-based particle systems (swarms) within the runtime environment. It allows for the simulation of complex autonomous behaviors such as flocking, following, and avoiding, usable in both volumetric (3D) and planar (2D) modes.
 
 <p align="center">
-    <img src="on-validate-changes-at-runtime.gif" alt="Demo of the sample project" width="50%" />
+    <img src="on-validate-changes-at-runtime.gif" alt="Runtime modifications demo" width="50%" />
     <br>
-    <em>Demo of the sample project</em>
+    <em>Runtime modifications</em>
 </p>
 
 ## Package contents
